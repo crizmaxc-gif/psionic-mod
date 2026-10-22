@@ -1,0 +1,30 @@
+name: Compilar Mod Fabric 1.21.1
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          
+      - name: Otorgar permisos a Gradle
+        run: chmod +x gradlew
+        
+      - name: Compilar con Gradle
+        run: ./gradlew build
+        
+      - name: Guardar archivo .jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mod-Psionics-1.21.1
+          path: build/libs/*.jar
