@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "psionics",
+  "version": "${version}",
+  "name": "Psionics",
+  "description": "Poderes psiónicos: telequinesis, escudos, impulso aéreo y más.",
+  "authors": ["Tu nombre"],
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.psionics.PsionicsMod"],
+    "client": ["com.psionics.client.PsionicsClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
